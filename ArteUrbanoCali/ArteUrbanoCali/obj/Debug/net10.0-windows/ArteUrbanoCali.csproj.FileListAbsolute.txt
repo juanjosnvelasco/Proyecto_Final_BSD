@@ -20,3 +20,4 @@ C:\Users\juanc\Documents\Proyecto_Final_BSD\ArteUrbanoCali\ArteUrbanoCali\obj\De
 C:\Users\juanc\Documents\Proyecto_Final_BSD\ArteUrbanoCali\ArteUrbanoCali\obj\Debug\net10.0-windows\ArteUrbanoCali.pdb
 C:\Users\juanc\Documents\Proyecto_Final_BSD\ArteUrbanoCali\ArteUrbanoCali\obj\Debug\net10.0-windows\ArteUrbanoCali.genruntimeconfig.cache
 C:\Users\juanc\Documents\Proyecto_Final_BSD\ArteUrbanoCali\ArteUrbanoCali\obj\Debug\net10.0-windows\ref\ArteUrbanoCali.dll
+C:\Users\juanc\Documents\Proyecto_Final_BSD\ArteUrbanoCali\ArteUrbanoCali\obj\Debug\net10.0-windows\ArteUrbanoCali.sourcelink.json

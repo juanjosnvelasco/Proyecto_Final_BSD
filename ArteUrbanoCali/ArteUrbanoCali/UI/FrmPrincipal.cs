@@ -21,14 +21,32 @@ namespace ArteUrbanoCali.UI
             };
 
             var menu = new MenuStrip();
-            foreach (string modulo in new[] { "Artistas", "Categorías", "Ubicaciones", "Obras", "Multimedia", "Rutas", "Consultas" })
+
+            // Agrega un módulo al menú. Si todavía no existe su formulario, avisa que está en construcción.
+            void Agregar(string nombre, Func<Form>? crearFormulario)
             {
-                var item = new ToolStripMenuItem(modulo);
-                string nombre = modulo;
-                item.Click += (s, e) => MessageBox.Show("Módulo de " + nombre + " en construcción.",
-                                                        "Arte Urbano Cali", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var item = new ToolStripMenuItem(nombre);
+                item.Click += (s, e) =>
+                {
+                    if (crearFormulario == null)
+                    {
+                        MessageBox.Show("Módulo de " + nombre + " en construcción.",
+                                        "Arte Urbano Cali", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    using Form formulario = crearFormulario();
+                    formulario.ShowDialog(this);
+                };
                 menu.Items.Add(item);
             }
+
+            Agregar("Artistas", () => new FrmArtistas());
+            Agregar("Categorías", () => new FrmCategorias());
+            Agregar("Ubicaciones", () => new FrmUbicaciones());
+            Agregar("Obras", null);
+            Agregar("Multimedia", null);
+            Agregar("Rutas", null);
+            Agregar("Consultas", null);
 
             var salir = new ToolStripMenuItem("Salir");
             salir.Click += (s, e) => Close();
