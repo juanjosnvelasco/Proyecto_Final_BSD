@@ -1,0 +1,8 @@
+{
+  "tipo": "referencia de realidad aumentada",
+  "obra": "obra_001",
+  "nombre": "Raices del Pacifico - AR",
+  "marcador": "marcador.png",
+  "contenido": "../../Videos/obra_001.mp4",
+  "nota": "Archivo de referencia. El proyecto no exige desarrollar la experiencia de realidad aumentada."
+}
