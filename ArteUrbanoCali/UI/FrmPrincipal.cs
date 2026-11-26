@@ -44,9 +44,9 @@ namespace ArteUrbanoCali.UI
             Agregar("Categorías", () => new FrmCategorias());
             Agregar("Ubicaciones", () => new FrmUbicaciones());
             Agregar("Obras", () => new FrmObras());
-            Agregar("Multimedia", null);
-            Agregar("Rutas", null);
-            Agregar("Consultas", null);
+            Agregar("Multimedia", () => new FrmMultimedia());
+            Agregar("Rutas", () => new FrmRutas());
+            Agregar("Consultas", () => new FrmConsultas());
 
             var salir = new ToolStripMenuItem("Salir");
             salir.Click += (s, e) => Close();
