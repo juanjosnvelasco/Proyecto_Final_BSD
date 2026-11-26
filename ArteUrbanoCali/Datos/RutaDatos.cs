@@ -8,10 +8,10 @@ namespace ArteUrbanoCali.Datos
         public List<Ruta> Listar()
         {
             const string sql = @"
-                SELECT r.idRuta, r.nombreRuta, r.descripcionRuta, r.duracionEstimadaMin,
-                       r.distanciaEstimadaKm, r.estadoRuta,
-                       (SELECT COUNT(*) FROM RUTAS_OBRAS ro WHERE ro.idRutaFK = r.idRuta) AS totalObras
-                  FROM RUTAS r
+                SELECT r.idRuta, r.nombreRuta, r.descripcionRuta, r.duracionEstimada,
+                       r.distanciaEstimada, r.estadoRuta,
+                       (SELECT COUNT(*) FROM rutas_obras ro WHERE ro.idRutaFK = r.idRuta) AS totalObras
+                  FROM rutas r
                  ORDER BY r.nombreRuta";
             var lista = new List<Ruta>();
             using var cn = Conexion.Crear();
@@ -36,14 +36,14 @@ namespace ArteUrbanoCali.Datos
 
         public List<ItemCombo> ListarRutasCombo()
         {
-            return ListarItems("SELECT idRuta, nombreRuta FROM RUTAS ORDER BY nombreRuta");
+            return ListarItems("SELECT idRuta, nombreRuta FROM rutas ORDER BY nombreRuta");
         }
 
         public List<ItemCombo> ListarObrasCombo()
         {
             return ListarItems(@"
                 SELECT o.idObra, CONCAT(o.nombreObra, ' - ', a.nombreArtistico)
-                  FROM OBRAS o JOIN ARTISTAS a ON a.idArtista = o.idArtistaFK
+                  FROM obras o JOIN artistas a ON a.idArtista = o.idArtistaFK
                  ORDER BY o.nombreObra");
         }
 
@@ -61,7 +61,7 @@ namespace ArteUrbanoCali.Datos
 
         public bool ExisteNombre(string nombre, string? excluirId)
         {
-            const string sql = "SELECT COUNT(*) FROM RUTAS WHERE nombreRuta = @nombre AND idRuta <> @id";
+            const string sql = "SELECT COUNT(*) FROM rutas WHERE nombreRuta = @nombre AND idRuta <> @id";
             using var cn = Conexion.Crear();
             cn.Open();
             using var cmd = new MySqlCommand(sql, cn);
@@ -74,7 +74,7 @@ namespace ArteUrbanoCali.Datos
         {
             using var cn = Conexion.Crear();
             cn.Open();
-            using var cmd = new MySqlCommand("SELECT COUNT(*) FROM RUTAS_OBRAS WHERE idRutaFK = @ruta", cn);
+            using var cmd = new MySqlCommand("SELECT COUNT(*) FROM rutas_obras WHERE idRutaFK = @ruta", cn);
             cmd.Parameters.AddWithValue("@ruta", idRuta);
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
@@ -82,7 +82,7 @@ namespace ArteUrbanoCali.Datos
         public void Insertar(Ruta r)
         {
             const string sql = @"
-                INSERT INTO RUTAS (idRuta, nombreRuta, descripcionRuta, duracionEstimadaMin, distanciaEstimadaKm, estadoRuta)
+                INSERT INTO rutas (idRuta, nombreRuta, descripcionRuta, duracionEstimada, distanciaEstimada, estadoRuta)
                 VALUES (@id, @nombre, @descripcion, @duracion, @distancia, @estado)";
             Ejecutar(sql, r);
         }
@@ -90,9 +90,9 @@ namespace ArteUrbanoCali.Datos
         public void Actualizar(Ruta r)
         {
             const string sql = @"
-                UPDATE RUTAS
-                   SET nombreRuta = @nombre, descripcionRuta = @descripcion, duracionEstimadaMin = @duracion,
-                       distanciaEstimadaKm = @distancia, estadoRuta = @estado
+                UPDATE rutas
+                   SET nombreRuta = @nombre, descripcionRuta = @descripcion, duracionEstimada = @duracion,
+                       distanciaEstimada = @distancia, estadoRuta = @estado
                  WHERE idRuta = @id";
             Ejecutar(sql, r);
         }
@@ -111,17 +111,17 @@ namespace ArteUrbanoCali.Datos
             cmd.ExecuteNonQuery();
         }
 
-        // ---------- Obras de una ruta (tabla asociativa RUTAS_OBRAS) ----------
+        // ---------- Obras de una ruta (tabla asociativa rutas_obras) ----------
 
         public List<RutaObra> ListarObras(string idRuta)
         {
             const string sql = @"
                 SELECT ro.idRutaObra, ro.idRutaFK, ro.idObraFK, ro.ordenVisita, ro.recomendacion,
-                       ro.tiempoPermanenciaMin, o.nombreObra, u.nombreLugar, b.nombreBarrio, u.direccion
-                  FROM RUTAS_OBRAS ro
-                  JOIN OBRAS o       ON o.idObra      = ro.idObraFK
-                  JOIN UBICACIONES u ON u.idUbicacion = o.idUbicacionFK
-                  JOIN BARRIOS b     ON b.idBarrio    = u.idBarrioFK
+                       ro.tiempoPermanencia, o.nombreObra, u.nombreLugar, b.nombreBarrio, u.direccion
+                  FROM rutas_obras ro
+                  JOIN obras o       ON o.idObra      = ro.idObraFK
+                  JOIN ubicaciones u ON u.idUbicacion = o.idUbicacionFK
+                  JOIN barrios b     ON b.idBarrio    = u.idBarrioFK
                  WHERE ro.idRutaFK = @ruta
                  ORDER BY ro.ordenVisita";
             var lista = new List<RutaObra>();
@@ -154,7 +154,7 @@ namespace ArteUrbanoCali.Datos
             using var cn = Conexion.Crear();
             cn.Open();
             using var cmd = new MySqlCommand(
-                "SELECT COUNT(*) FROM RUTAS_OBRAS WHERE idRutaFK = @ruta AND idObraFK = @obra", cn);
+                "SELECT COUNT(*) FROM rutas_obras WHERE idRutaFK = @ruta AND idObraFK = @obra", cn);
             cmd.Parameters.AddWithValue("@ruta", idRuta);
             cmd.Parameters.AddWithValue("@obra", idObra);
             return Convert.ToInt64(cmd.ExecuteScalar()) > 0;
@@ -165,7 +165,7 @@ namespace ArteUrbanoCali.Datos
             using var cn = Conexion.Crear();
             cn.Open();
             using var cmd = new MySqlCommand(
-                "SELECT COUNT(*) FROM RUTAS_OBRAS WHERE idRutaFK = @ruta AND ordenVisita = @orden", cn);
+                "SELECT COUNT(*) FROM rutas_obras WHERE idRutaFK = @ruta AND ordenVisita = @orden", cn);
             cmd.Parameters.AddWithValue("@ruta", idRuta);
             cmd.Parameters.AddWithValue("@orden", orden);
             return Convert.ToInt64(cmd.ExecuteScalar()) > 0;
@@ -176,7 +176,7 @@ namespace ArteUrbanoCali.Datos
             using var cn = Conexion.Crear();
             cn.Open();
             using var cmd = new MySqlCommand(
-                "SELECT COALESCE(MAX(ordenVisita), 0) + 1 FROM RUTAS_OBRAS WHERE idRutaFK = @ruta", cn);
+                "SELECT COALESCE(MAX(ordenVisita), 0) + 1 FROM rutas_obras WHERE idRutaFK = @ruta", cn);
             cmd.Parameters.AddWithValue("@ruta", idRuta);
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
@@ -184,7 +184,7 @@ namespace ArteUrbanoCali.Datos
         public void AgregarObra(RutaObra ro)
         {
             const string sql = @"
-                INSERT INTO RUTAS_OBRAS (idRutaObra, idRutaFK, idObraFK, ordenVisita, recomendacion, tiempoPermanenciaMin)
+                INSERT INTO rutas_obras (idRutaObra, idRutaFK, idObraFK, ordenVisita, recomendacion, tiempoPermanencia)
                 VALUES (@id, @ruta, @obra, @orden, @recomendacion, @tiempo)";
             using var cn = Conexion.Crear();
             cn.Open();
@@ -208,7 +208,7 @@ namespace ArteUrbanoCali.Datos
             string idRuta;
             int orden;
             using (var cmd = new MySqlCommand(
-                "SELECT idRutaFK, ordenVisita FROM RUTAS_OBRAS WHERE idRutaObra = @id", cn, tx))
+                "SELECT idRutaFK, ordenVisita FROM rutas_obras WHERE idRutaObra = @id", cn, tx))
             {
                 cmd.Parameters.AddWithValue("@id", idRutaObra);
                 using var rd = cmd.ExecuteReader();
@@ -217,14 +217,14 @@ namespace ArteUrbanoCali.Datos
                 orden = rd.GetInt32(1);
             }
 
-            using (var cmd = new MySqlCommand("DELETE FROM RUTAS_OBRAS WHERE idRutaObra = @id", cn, tx))
+            using (var cmd = new MySqlCommand("DELETE FROM rutas_obras WHERE idRutaObra = @id", cn, tx))
             {
                 cmd.Parameters.AddWithValue("@id", idRutaObra);
                 cmd.ExecuteNonQuery();
             }
 
             using (var cmd = new MySqlCommand(@"
-                UPDATE RUTAS_OBRAS SET ordenVisita = ordenVisita - 1
+                UPDATE rutas_obras SET ordenVisita = ordenVisita - 1
                  WHERE idRutaFK = @ruta AND ordenVisita > @orden
                  ORDER BY ordenVisita", cn, tx))
             {
@@ -249,7 +249,7 @@ namespace ArteUrbanoCali.Datos
 
         private static void Actualizar(MySqlConnection cn, MySqlTransaction tx, string id, int orden)
         {
-            using var cmd = new MySqlCommand("UPDATE RUTAS_OBRAS SET ordenVisita = @orden WHERE idRutaObra = @id", cn, tx);
+            using var cmd = new MySqlCommand("UPDATE rutas_obras SET ordenVisita = @orden WHERE idRutaObra = @id", cn, tx);
             cmd.Parameters.AddWithValue("@orden", orden);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();

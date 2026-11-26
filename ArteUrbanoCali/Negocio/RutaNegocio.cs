@@ -20,7 +20,7 @@ namespace ArteUrbanoCali.Negocio
             bool esNueva = string.IsNullOrEmpty(r.IdRuta);
 
             r.Nombre = Validador.Obligatorio(r.Nombre, "nombre de la ruta", 100);
-            r.Descripcion = Validador.Opcional(r.Descripcion, "descripción", 500);
+            r.Descripcion = Validador.Opcional(r.Descripcion, "descripción", 255);
             if (r.DuracionMinutos <= 0)
                 throw new ValidacionException("La duración estimada debe ser mayor a cero.");
             if (r.DistanciaKm <= 0)
@@ -51,7 +51,7 @@ namespace ArteUrbanoCali.Negocio
             if (orden <= 0) throw new ValidacionException("El orden de visita debe ser mayor a cero.");
             if (tiempoMinutos <= 0) throw new ValidacionException("El tiempo de permanencia debe ser mayor a cero.");
 
-            string? rec = Validador.Opcional(recomendacion, "recomendación", 300);
+            string? rec = Validador.Opcional(recomendacion, "recomendación", 255);
 
             if (_datos.ObraEnRuta(idRuta, idObra))
                 throw new ValidacionException("Esa obra ya está en la ruta.");

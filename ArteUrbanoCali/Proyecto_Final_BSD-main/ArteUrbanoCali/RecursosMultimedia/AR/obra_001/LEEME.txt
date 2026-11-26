@@ -1,3 +1,0 @@
-Referencia de realidad aumentada de la obra_001.
-marcador.png: imagen que la camara reconoceria.
-descriptor.json: indica que contenido se mostraria sobre el marcador.

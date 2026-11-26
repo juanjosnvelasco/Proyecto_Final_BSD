@@ -44,7 +44,6 @@ namespace ArteUrbanoCali.UI
             pnlFiltro.Controls.Add(Controles.Boton("Ver todos", 505, 7, 90, () => { cmbObraFiltro.SelectedIndex = -1; Cargar(); }));
             cmbObraFiltro.SelectionChangeCommitted += (s, e) => Cargar();
 
-            cmbTipo.DataSource = ArchivosMultimedia.Tipos.ToList();
             cmbTipo.SelectedIndex = -1;
             cmbTipo.SelectedIndexChanged += (s, e) => { _origen = null; txtArchivo.Clear(); };
 
@@ -89,6 +88,8 @@ namespace ArteUrbanoCali.UI
         {
             Controles.Ejecutar(() =>
             {
+                cmbTipo.DataSource = _negocio.ListarTipos();   // tipos permitidos según la base de datos
+                cmbTipo.SelectedIndex = -1;
                 var obras = _negocio.ListarObras();
                 foreach (var combo in new[] { cmbObraFiltro, cmbObra })
                 {
@@ -164,7 +165,9 @@ namespace ArteUrbanoCali.UI
             }
             else
             {
-                using var dlg = new OpenFileDialog { Filter = ArchivosMultimedia.FiltroDialogo(tipo) };
+                string filtro = "";
+                Controles.Ejecutar(() => filtro = _negocio.FiltroDialogo(tipo));
+                using var dlg = new OpenFileDialog { Filter = filtro };
                 if (dlg.ShowDialog(this) != DialogResult.OK) return;
                 _origen = dlg.FileName;
             }

@@ -3,31 +3,11 @@ namespace ArteUrbanoCali.Negocio
     /// <summary>
     /// Manejo de la carpeta RecursosMultimedia. En la base de datos solo se guarda la ruta RELATIVA
     /// (ej. "Imagenes/arte1.jpg"); aquí se convierte a ruta física y se copian los archivos a la carpeta.
+    /// Los tipos, formatos y subcarpetas permitidos vienen de la base (TIPOS_RECURSOS / FORMATOS_RECURSOS).
     /// </summary>
     public static class ArchivosMultimedia
     {
         public const string NombreCarpeta = "RecursosMultimedia";
-
-        public static readonly string[] Tipos = { "IMAGEN", "VIDEO", "AUDIO", "MODELO3D", "AR" };
-
-        public static readonly Dictionary<string, string[]> FormatosPorTipo = new()
-        {
-            ["IMAGEN"] = new[] { "JPG", "PNG", "AVIF" },
-            ["VIDEO"] = new[] { "MP4" },
-            ["AUDIO"] = new[] { "MP3" },
-            ["MODELO3D"] = new[] { "GLB" },
-            ["AR"] = new[] { "AR" }
-        };
-
-        public static readonly Dictionary<string, string> SubcarpetaPorTipo = new()
-        {
-            ["IMAGEN"] = "Imagenes",
-            ["VIDEO"] = "Videos",
-            ["AUDIO"] = "Audios",
-            ["MODELO3D"] = "Modelos3D",
-            ["AR"] = "AR"
-        };
-
         public const long TamanoMaximoBytes = 200L * 1024 * 1024;
 
         private static string? _base;
@@ -51,21 +31,23 @@ namespace ArteUrbanoCali.Negocio
             }
         }
 
-        /// <summary>Formato (en mayúsculas) según la extensión; JPEG se normaliza a JPG.</summary>
+        /// <summary>Extensión en mayúsculas; JPEG se normaliza a JPG.</summary>
         public static string FormatoDeArchivo(string ruta)
         {
             string ext = Path.GetExtension(ruta).TrimStart('.').ToUpperInvariant();
             return ext == "JPEG" ? "JPG" : ext;
         }
 
-        public static string FiltroDialogo(string tipo) => tipo switch
+        /// <summary>Filtro para el cuadro de diálogo a partir de las extensiones permitidas.</summary>
+        public static string FiltroDialogo(IEnumerable<string> extensiones)
         {
-            "IMAGEN" => "Imágenes (*.jpg;*.jpeg;*.png;*.avif)|*.jpg;*.jpeg;*.png;*.avif",
-            "VIDEO" => "Videos (*.mp4)|*.mp4",
-            "AUDIO" => "Audios (*.mp3)|*.mp3",
-            "MODELO3D" => "Modelos 3D (*.glb)|*.glb",
-            _ => "Todos los archivos (*.*)|*.*"
-        };
+            var patrones = extensiones
+                .SelectMany(e => e == "JPG" ? new[] { "*.jpg", "*.jpeg" } : new[] { "*." + e.ToLowerInvariant() })
+                .ToList();
+            if (patrones.Count == 0) return "Todos los archivos (*.*)|*.*";
+            string lista = string.Join(";", patrones);
+            return $"Archivos permitidos ({lista})|{lista}";
+        }
 
         /// <summary>Convierte una ruta relativa de la BD a ruta física, impidiendo salir de RecursosMultimedia.</summary>
         public static string ResolverRuta(string relativa)
@@ -84,7 +66,7 @@ namespace ArteUrbanoCali.Negocio
         }
 
         /// <summary>Copia el archivo a su subcarpeta (si no está ya dentro) y devuelve la ruta relativa con "/".</summary>
-        public static string ImportarArchivo(string origen, string tipo)
+        public static string ImportarArchivo(string origen, string carpetaTipo)
         {
             string baseFull = Path.GetFullPath(CarpetaBase);
             string origenFull = Path.GetFullPath(origen);
@@ -93,7 +75,7 @@ namespace ArteUrbanoCali.Negocio
             if (origenFull.StartsWith(baseFull + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
                 return Path.GetRelativePath(baseFull, origenFull).Replace('\\', '/');
 
-            string carpeta = Path.Combine(baseFull, SubcarpetaPorTipo[tipo]);
+            string carpeta = Path.Combine(baseFull, carpetaTipo.Trim('/', '\\'));
             Directory.CreateDirectory(carpeta);
             string destino = Path.Combine(carpeta, Path.GetFileName(origenFull));
             int n = 1;
@@ -105,19 +87,19 @@ namespace ArteUrbanoCali.Negocio
             return Path.GetRelativePath(baseFull, destino).Replace('\\', '/');
         }
 
-        /// <summary>Para AR: copia la carpeta completa dentro de RecursosMultimedia/AR y devuelve la ruta relativa.</summary>
-        public static string ImportarCarpetaAR(string origen)
+        /// <summary>Para AR: copia la carpeta completa dentro de la carpeta del tipo y devuelve la ruta relativa.</summary>
+        public static string ImportarCarpetaAR(string origen, string carpetaTipo)
         {
             string baseFull = Path.GetFullPath(CarpetaBase);
             string origenFull = Path.GetFullPath(origen.TrimEnd(Path.DirectorySeparatorChar));
             if (origenFull.StartsWith(baseFull + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
                 return Path.GetRelativePath(baseFull, origenFull).Replace('\\', '/');
 
-            string destinoRaiz = Path.Combine(baseFull, SubcarpetaPorTipo["AR"]);
+            string destinoRaiz = Path.Combine(baseFull, carpetaTipo.Trim('/', '\\'));
             Directory.CreateDirectory(destinoRaiz);
-            string destino = Path.Combine(destinoRaiz, new DirectoryInfo(origenFull).Name);
+            string baseDestino = Path.Combine(destinoRaiz, new DirectoryInfo(origenFull).Name);
+            string destino = baseDestino;
             int n = 1;
-            string baseDestino = destino;
             while (Directory.Exists(destino)) destino = baseDestino + "_" + n++;
             CopiarCarpeta(origenFull, destino);
             return Path.GetRelativePath(baseFull, destino).Replace('\\', '/');
@@ -132,13 +114,15 @@ namespace ArteUrbanoCali.Negocio
                 CopiarCarpeta(d, Path.Combine(destino, new DirectoryInfo(d).Name));
         }
 
-        public static long Tamano(string relativa)
+        /// <summary>Tamaño en KB (la base guarda el tamaño en KB).</summary>
+        public static decimal TamanoKb(string relativa)
         {
             string fisica = ResolverRuta(relativa);
-            if (File.Exists(fisica)) return new FileInfo(fisica).Length;
-            if (Directory.Exists(fisica))
-                return new DirectoryInfo(fisica).EnumerateFiles("*", SearchOption.AllDirectories).Sum(f => f.Length);
-            return 0;
+            long bytes = 0;
+            if (File.Exists(fisica)) bytes = new FileInfo(fisica).Length;
+            else if (Directory.Exists(fisica))
+                bytes = new DirectoryInfo(fisica).EnumerateFiles("*", SearchOption.AllDirectories).Sum(f => f.Length);
+            return Math.Round(bytes / 1024m, 2);
         }
     }
 }
