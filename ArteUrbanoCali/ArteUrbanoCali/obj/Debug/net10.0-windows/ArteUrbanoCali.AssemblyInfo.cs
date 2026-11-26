@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArteUrbanoCali")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e24c6d095cc4f402463163362578602a1fc6860")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+752ce822676c195d4428e915c1cc58a0821cfa19")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArteUrbanoCali")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArteUrbanoCali")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

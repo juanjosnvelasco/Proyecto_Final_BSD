@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\negocio\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\negocio\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\negocio\\artistanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\negocio\\artistanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\entidades\\artista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\entidades\\artista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\datos\\usuariodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\datos\\usuariodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\datos\\catalogodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\datos\\catalogodatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\datos\\artistadatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\datos\\artistadatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\negocio\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\negocio\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\datos\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\negocio\\validacionexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\negocio\\validacionexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|solutionrelative:arteurbanocali\\negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DB316F5-E194-790D-BEAC-51535FA88DA5}|ArteUrbanoCali\\ArteUrbanoCali.csproj|c:\\users\\juanc\\documents\\proyecto_final_bsd\\arteurbanocali\\arteurbanocali\\negocio\\seguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,45 +62,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "conexion.cs",
-              "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\conexion.cs",
-              "RelativeDocumentMoniker": "ArteUrbanoCali\\Datos\\conexion.cs",
-              "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\conexion.cs",
-              "RelativeToolTip": "ArteUrbanoCali\\Datos\\conexion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ArtistaNegocio.cs",
+              "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\ArtistaNegocio.cs",
+              "RelativeDocumentMoniker": "ArteUrbanoCali\\Negocio\\ArtistaNegocio.cs",
+              "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\ArtistaNegocio.cs",
+              "RelativeToolTip": "ArteUrbanoCali\\Negocio\\ArtistaNegocio.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowC0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-23T21:43:45.797Z",
+              "WhenOpened": "2026-11-25T23:03:00.574Z",
               "EditorCaption": "",
               "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ValidacionException.cs",
-              "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\ValidacionException.cs",
-              "RelativeDocumentMoniker": "ArteUrbanoCali\\Negocio\\ValidacionException.cs",
-              "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\ValidacionException.cs",
-              "RelativeToolTip": "ArteUrbanoCali\\Negocio\\ValidacionException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Artista.cs",
+              "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Entidades\\Artista.cs",
+              "RelativeDocumentMoniker": "ArteUrbanoCali\\Entidades\\Artista.cs",
+              "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Entidades\\Artista.cs",
+              "RelativeToolTip": "ArteUrbanoCali\\Entidades\\Artista.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAcwAIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-19T06:16:21.076Z",
+              "WhenOpened": "2026-11-25T23:02:32.793Z",
               "EditorCaption": "",
               "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "CatalogoDatos.cs",
+              "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\CatalogoDatos.cs",
+              "RelativeDocumentMoniker": "ArteUrbanoCali\\Datos\\CatalogoDatos.cs",
+              "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\CatalogoDatos.cs",
+              "RelativeToolTip": "ArteUrbanoCali\\Datos\\CatalogoDatos.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-25T23:01:56.548Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ArtistaDatos.cs",
+              "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\ArtistaDatos.cs",
+              "RelativeDocumentMoniker": "ArteUrbanoCali\\Datos\\ArtistaDatos.cs",
+              "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\ArtistaDatos.cs",
+              "RelativeToolTip": "ArteUrbanoCali\\Datos\\ArtistaDatos.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAACoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-25T23:01:22.463Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "UsuarioNegocio.cs",
               "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\UsuarioNegocio.cs",
               "RelativeDocumentMoniker": "ArteUrbanoCali\\Negocio\\UsuarioNegocio.cs",
               "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\UsuarioNegocio.cs",
               "RelativeToolTip": "ArteUrbanoCali\\Negocio\\UsuarioNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-19T06:16:10.736Z",
               "EditorCaption": "",
@@ -92,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Sesion.cs",
               "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\Sesion.cs",
               "RelativeDocumentMoniker": "ArteUrbanoCali\\Negocio\\Sesion.cs",
@@ -106,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Seguridad.cs",
               "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\Seguridad.cs",
               "RelativeDocumentMoniker": "ArteUrbanoCali\\Negocio\\Seguridad.cs",
@@ -119,13 +163,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Entidades\\Usuario.cs",
               "RelativeDocumentMoniker": "ArteUrbanoCali\\Entidades\\Usuario.cs",
               "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Entidades\\Usuario.cs",
               "RelativeToolTip": "ArteUrbanoCali\\Entidades\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAA/wAIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-19T06:15:37.343Z",
               "EditorCaption": "",
@@ -133,13 +177,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
+              "Title": "ValidacionException.cs",
+              "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\ValidacionException.cs",
+              "RelativeDocumentMoniker": "ArteUrbanoCali\\Negocio\\ValidacionException.cs",
+              "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Negocio\\ValidacionException.cs",
+              "RelativeToolTip": "ArteUrbanoCali\\Negocio\\ValidacionException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-19T06:16:21.076Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UsuarioDatos.cs",
               "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\UsuarioDatos.cs",
               "RelativeDocumentMoniker": "ArteUrbanoCali\\Datos\\UsuarioDatos.cs",
               "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\UsuarioDatos.cs",
               "RelativeToolTip": "ArteUrbanoCali\\Datos\\UsuarioDatos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-19T06:14:57.464Z",
               "EditorCaption": "",
@@ -147,7 +204,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
+              "Title": "conexion.cs",
+              "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\conexion.cs",
+              "RelativeDocumentMoniker": "ArteUrbanoCali\\Datos\\conexion.cs",
+              "ToolTip": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Datos\\conexion.cs",
+              "RelativeToolTip": "ArteUrbanoCali\\Datos\\conexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-23T21:43:45.797Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\Form1.cs",
               "RelativeDocumentMoniker": "ArteUrbanoCali\\Form1.cs",
@@ -160,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "ArteUrbanoCali",
               "DocumentMoniker": "C:\\Users\\juanc\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali\\ArteUrbanoCali.csproj",
               "RelativeDocumentMoniker": "ArteUrbanoCali\\ArteUrbanoCali.csproj",

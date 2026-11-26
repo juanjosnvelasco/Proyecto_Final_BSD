@@ -13,6 +13,9 @@
     <Compile Update="UI\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\FrmObras.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -43,7 +43,7 @@ namespace ArteUrbanoCali.UI
             Agregar("Artistas", () => new FrmArtistas());
             Agregar("Categorías", () => new FrmCategorias());
             Agregar("Ubicaciones", () => new FrmUbicaciones());
-            Agregar("Obras", null);
+            Agregar("Obras", () => new FrmObras());
             Agregar("Multimedia", null);
             Agregar("Rutas", null);
             Agregar("Consultas", null);

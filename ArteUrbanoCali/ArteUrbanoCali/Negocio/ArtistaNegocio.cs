@@ -11,7 +11,7 @@ namespace ArteUrbanoCali.Negocio
         public List<Artista> Listar() => _datos.Listar();
         public List<Pais> ListarPaises() => _catalogo.ListarPaises();
 
-        // Si IdArtista viene vacío se registra uno nuevo; si trae valor, se modifica.
+        
         public void Guardar(Artista a)
         {
             Validador.ExigirAdministrador();
@@ -43,7 +43,7 @@ namespace ArteUrbanoCali.Negocio
             }
         }
 
-        // Los artistas se desactivan, no se eliminan, para conservar la autoría de sus obras.
+        
         public void CambiarEstado(string idArtista, bool estado)
         {
             Validador.ExigirAdministrador();

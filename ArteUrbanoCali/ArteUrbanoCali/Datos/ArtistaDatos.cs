@@ -40,7 +40,7 @@ namespace ArteUrbanoCali.Datos
             return lista;
         }
 
-        // ¿Ya existe otro artista con ese nombre artístico? (excluye al que se está editando)
+        
         public bool ExisteNombre(string nombreArtistico, string? excluirId)
         {
             const string sql = "SELECT COUNT(*) FROM ARTISTAS WHERE nombreArtistico = @nombre AND idArtista <> @id";

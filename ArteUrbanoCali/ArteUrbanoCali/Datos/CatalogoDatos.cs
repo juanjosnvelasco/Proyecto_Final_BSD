@@ -3,7 +3,7 @@ using MySqlConnector;
 
 namespace ArteUrbanoCali.Datos
 {
-    /// <summary>Listas de apoyo para los combos: países y barrios.</summary>
+    
     public class CatalogoDatos
     {
         public List<Pais> ListarPaises()

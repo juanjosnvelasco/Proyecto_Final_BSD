@@ -1,6 +1,6 @@
 namespace ArteUrbanoCali.Entidades
 {
-    /// <summary>Artista responsable de una o varias obras (tabla ARTISTAS).</summary>
+    
     public class Artista
     {
         public string IdArtista { get; set; } = "";
