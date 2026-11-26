@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leont\\OneDrive\\Desktop\\Proyecto_Final_BSD-main\\ArteUrbanoCali\\ArteUrbanoCali.csproj": {}
+    "C:\\Users\\leont\\OneDrive\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leont\\OneDrive\\Desktop\\Proyecto_Final_BSD-main\\ArteUrbanoCali\\ArteUrbanoCali.csproj": {
+    "C:\\Users\\leont\\OneDrive\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leont\\OneDrive\\Desktop\\Proyecto_Final_BSD-main\\ArteUrbanoCali\\ArteUrbanoCali.csproj",
+        "projectUniqueName": "C:\\Users\\leont\\OneDrive\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali.csproj",
         "projectName": "ArteUrbanoCali",
-        "projectPath": "C:\\Users\\leont\\OneDrive\\Desktop\\Proyecto_Final_BSD-main\\ArteUrbanoCali\\ArteUrbanoCali.csproj",
+        "projectPath": "C:\\Users\\leont\\OneDrive\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali.csproj",
         "packagesPath": "C:\\Users\\leont\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leont\\OneDrive\\Desktop\\Proyecto_Final_BSD-main\\ArteUrbanoCali\\obj\\",
+        "outputPath": "C:\\Users\\leont\\OneDrive\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UV+18SL49Lk=",
+  "dgSpecHash": "S8D7g3V5M7c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\leont\\OneDrive\\Desktop\\Proyecto_Final_BSD-main\\ArteUrbanoCali\\ArteUrbanoCali.csproj",
+  "projectFilePath": "C:\\Users\\leont\\OneDrive\\Documents\\Proyecto_Final_BSD\\ArteUrbanoCali\\ArteUrbanoCali.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leont\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.15\\microsoft.extensions.dependencyinjection.abstractions.10.0.15.nupkg.sha512",
     "C:\\Users\\leont\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.15\\microsoft.extensions.logging.abstractions.10.0.15.nupkg.sha512",
